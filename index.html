@@ -123,7 +123,7 @@
             box-shadow: 0 4px 12px rgba(251, 114, 153, 0.2);
         }
 
-        #tutorial-btn {
+        .tutorial-btn {
             width: 100%;
             padding: 14px 12px;
             background-color: #4299e1;
@@ -137,7 +137,7 @@
             font-weight: 500;
         }
 
-        #tutorial-btn:hover {
+        .tutorial-btn:hover {
             background-color: #3182ce;
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(66, 153, 225, 0.2);
@@ -234,7 +234,7 @@
 <body>
     <div class="container">
         <h1>B站视频转url在线工具</h1>
-        <div class="subtitle">网址程序为开源代码 可在<a href="https://github.com/cuteFishovo/vrc-url" target="_blank">github查看</a> 有问题请反馈qq1003294905</div>
+        <div class="subtitle">网址程序为开源代码 可在<a href="https://github.com/cuteFishovo/vrc-url" target="_blank">github查看</a> 有问题意见请反馈qq1003294905</div>
         <div class="subtitle">
             vrchat可食用§(*￣▽￣*)§ 其实就是给vrc写的 但是叫转url更好一些
         </div>
@@ -256,7 +256,8 @@
         </div>
         
         <button id="extract-btn">提取并生成链接</button>
-        <button id="tutorial-btn">查看使用教程(卡顿没法github速率就这么高)</button>
+        <button class="tutorial-btn" id="tutorial-btn-github">查看使用教程 github源(卡顿没法github速率就这么高)</button>
+        <button class="tutorial-btn" id="tutorial-btn-bilibili">查看使用教程 B站源</button>
         <div class="error" id="error-msg">请输入有效的B站链接！</div>
         
         <div class="result" id="result-area">
@@ -279,7 +280,8 @@
         const pasteUrlBtn = document.getElementById('paste-url-btn');
         const pastePrefixBtn = document.getElementById('paste-prefix-btn');
         const toast = document.getElementById('toast');
-        const tutorialBtn = document.getElementById('tutorial-btn');
+        const tutorialBtnGithub = document.getElementById('tutorial-btn-github');
+        const tutorialBtnBilibili = document.getElementById('tutorial-btn-bilibili');
         
         extractBtn.addEventListener('click', function() {
             const url = urlInput.value.trim();
@@ -355,8 +357,13 @@
             }
         });
 
-        tutorialBtn.addEventListener('click', function() {
+        tutorialBtnGithub.addEventListener('click', function() {
             const tutorialUrl = 'https://bgsmc.top/vrc-url/user-guide.mp4';
+            window.open(tutorialUrl, '_blank');
+        });
+
+        tutorialBtnBilibili.addEventListener('click', function() {
+            const tutorialUrl = 'https://www.bilibili.com/video/BV1GpcQzpEa9/?share_source=copy_web&vd_source=2b36761489223d0bcb938551a82ccb91';
             window.open(tutorialUrl, '_blank');
         });
     </script>
