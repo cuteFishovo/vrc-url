@@ -50,18 +50,6 @@
             text-decoration: underline;
         }
         
-        .tips {
-            text-align: center;
-            color: #718096;
-            font-size: 13px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            border: 1px solid #e9ecef;
-        }
-        
         .form-group {
             margin-bottom: 20px;
         }
@@ -125,7 +113,7 @@
             font-size: 16px;
             cursor: pointer;
             transition: all 0.3s;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 500;
         }
         
@@ -133,6 +121,26 @@
             background-color: #e86088;
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(251, 114, 153, 0.2);
+        }
+
+        #tutorial-btn {
+            width: 100%;
+            padding: 14px 12px;
+            background-color: #4299e1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        #tutorial-btn:hover {
+            background-color: #3182ce;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(66, 153, 225, 0.2);
         }
         
         .error {
@@ -248,6 +256,7 @@
         </div>
         
         <button id="extract-btn">提取并生成链接</button>
+        <button id="tutorial-btn">查看使用教程(卡顿没法github速率就这么高)</button>
         <div class="error" id="error-msg">请输入有效的B站链接！</div>
         
         <div class="result" id="result-area">
@@ -270,6 +279,7 @@
         const pasteUrlBtn = document.getElementById('paste-url-btn');
         const pastePrefixBtn = document.getElementById('paste-prefix-btn');
         const toast = document.getElementById('toast');
+        const tutorialBtn = document.getElementById('tutorial-btn');
         
         extractBtn.addEventListener('click', function() {
             const url = urlInput.value.trim();
@@ -343,6 +353,11 @@
             if (e.key === 'Enter') {
                 extractBtn.click();
             }
+        });
+
+        tutorialBtn.addEventListener('click', function() {
+            const tutorialUrl = 'https://bgsmc.top/vrc-url/user-guide.mp4';
+            window.open(tutorialUrl, '_blank');
         });
     </script>
 </body>
