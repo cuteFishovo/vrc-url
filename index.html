@@ -446,6 +446,7 @@
         <div class="subtitle" style="margin-top: -8px;">vrchat可食用§(*￣▽￣*)§ 其实就是给vrc写的 但是叫转url更好一些</div>
 
         <button class="tutorial-btn" id="tutorial-btn-bilibili">查看使用教程 B站源</button>
+        <button class="tutorial-btn" id="tutorial-btn-2">简化版(只有提取程序 推荐)</button>
 
         <div class="form-group">
             <label for="bilibili-url">输入B站视频链接：</label>
@@ -519,6 +520,8 @@
         const pastePrefixBtn = document.getElementById('paste-prefix-btn');
         const toast = document.getElementById('toast');
         const tutorialBtnBilibili = document.getElementById('tutorial-btn-bilibili');
+        // 获取新增的教程按钮
+        const tutorialBtn2 = document.getElementById('tutorial-btn-2');
         
         const supportWrapper = document.getElementById('support-wrapper');
         const cialloWrapper = document.getElementById('ciallo-wrapper');
@@ -656,6 +659,11 @@
 
         tutorialBtnBilibili.addEventListener('click', function() {
             const tutorialUrl = 'https://www.bilibili.com/video/BV1GpcQzpEa9/?share_source=copy_web&vd_source=2b36761489223d0bcb938551a82ccb91';
+            window.open(tutorialUrl, '_blank');
+        });
+
+        tutorialBtn2.addEventListener('click', function() {
+            const tutorialUrl = 'https://bgsmc.top/vrc-url/index-simple.html';
             window.open(tutorialUrl, '_blank');
         });
     </script>
